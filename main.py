@@ -7,23 +7,25 @@ import requests
 import Secrets
 
 
-def get_data(data):  # gets data from top 250
+def get_data(datalist):  # gets data from top 250
     with open("RawData.txt", "w") as rawData:  # writes all data to RawData.txt
-        for item in data:
+        for item in datalist:
             rawData.write("id:%s, rank:%s, title:%s, fullTitle:%s, year:%s, image:%s, crew:%s, imDbRating:%s, "
-                          "imDbRatingCount:%s \n" % (item['id'],item['rank'],item['title'],item['fullTitle'],
-                                                     item['year'],item['image'],item['crew'],item['imDbRating'],
+                          "imDbRatingCount:%s \n" % (item['id'], item['rank'], item['title'], item['fullTitle'],
+                                                     item['year'], item['image'], item['crew'], item['imDbRating'],
                                                      item['imDbRatingCount']))
     rawData.close()
     return
 
 
-def write_data():  # writes data in readable format in ShowData.txt
-
+def write_data(datalist):  # writes data in readable format in ShowData.txt
+    with open("ShowData.txt", "w") as ShowData:
+        for item in datalist:
+            ShowData.write("Title:%s, Rank:%s \n" % (item['title'], item['rank']))
     return
 
 
-def get_ratings():  # gets the required user ratings and writes them to ShowData.txt
+def get_ratings(datalist):  # gets the required user ratings and writes them to ShowData.txt
     return
 
 
@@ -38,8 +40,8 @@ def main():  # main function
 
     # function calls
     get_data(datalist)
-    #get_ratings()
-    #write_data()
+    #get_ratings(datalist)
+    write_data(datalist)
     return
 
 
