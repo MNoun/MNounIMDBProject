@@ -1,3 +1,53 @@
+Rank 1: Rating:10, Percent:62.0%, Votes:66675 
+Rank 1: Rating:9, Percent:19.8%, Votes:21327 
+Rank 1: Rating:8, Percent:6.9%, Votes:7452 
+Rank 1: Rating:7, Percent:2.0%, Votes:2139 
+Rank 1: Rating:6, Percent:0.7%, Votes:752 
+Rank 1: Rating:5, Percent:0.5%, Votes:525 
+Rank 1: Rating:4, Percent:0.2%, Votes:254 
+Rank 1: Rating:3, Percent:0.2%, Votes:262 
+Rank 1: Rating:2, Percent:0.3%, Votes:313 
+Rank 1: Rating:1, Percent:7.3%, Votes:7876 
+Rank 50: Rating:10, Percent:42.6%, Votes:10304 
+Rank 50: Rating:9, Percent:27.8%, Votes:6730 
+Rank 50: Rating:8, Percent:15.0%, Votes:3619 
+Rank 50: Rating:7, Percent:5.5%, Votes:1337 
+Rank 50: Rating:6, Percent:2.1%, Votes:499 
+Rank 50: Rating:5, Percent:1.1%, Votes:272 
+Rank 50: Rating:4, Percent:0.6%, Votes:156 
+Rank 50: Rating:3, Percent:0.6%, Votes:138 
+Rank 50: Rating:2, Percent:0.7%, Votes:175 
+Rank 50: Rating:1, Percent:4.0%, Votes:957 
+Rank 100: Rating:10, Percent:37.5%, Votes:29014 
+Rank 100: Rating:9, Percent:28.5%, Votes:22061 
+Rank 100: Rating:8, Percent:18.1%, Votes:14047 
+Rank 100: Rating:7, Percent:7.4%, Votes:5696 
+Rank 100: Rating:6, Percent:2.7%, Votes:2129 
+Rank 100: Rating:5, Percent:1.3%, Votes:994 
+Rank 100: Rating:4, Percent:0.6%, Votes:502 
+Rank 100: Rating:3, Percent:0.4%, Votes:335 
+Rank 100: Rating:2, Percent:0.8%, Votes:648 
+Rank 100: Rating:1, Percent:2.6%, Votes:1999 
+Rank 200: Rating:10, Percent:30.7%, Votes:23657 
+Rank 200: Rating:9, Percent:29.5%, Votes:22752 
+Rank 200: Rating:8, Percent:21.0%, Votes:16194 
+Rank 200: Rating:7, Percent:9.1%, Votes:7045 
+Rank 200: Rating:6, Percent:3.5%, Votes:2669 
+Rank 200: Rating:5, Percent:1.6%, Votes:1238 
+Rank 200: Rating:4, Percent:0.9%, Votes:705 
+Rank 200: Rating:3, Percent:0.7%, Votes:516 
+Rank 200: Rating:2, Percent:0.6%, Votes:451 
+Rank 200: Rating:1, Percent:2.4%, Votes:1856 
+Wheel of Time: Rating:10, Percent:25.6%, Votes:21257 
+Wheel of Time: Rating:9, Percent:14.1%, Votes:11740 
+Wheel of Time: Rating:8, Percent:20.1%, Votes:16668 
+Wheel of Time: Rating:7, Percent:14.4%, Votes:11953 
+Wheel of Time: Rating:6, Percent:7.3%, Votes:6051 
+Wheel of Time: Rating:5, Percent:4.3%, Votes:3534 
+Wheel of Time: Rating:4, Percent:2.5%, Votes:2105 
+Wheel of Time: Rating:3, Percent:2.5%, Votes:2076 
+Wheel of Time: Rating:2, Percent:2.3%, Votes:1938 
+Wheel of Time: Rating:1, Percent:6.9%, Votes:5732 
 Title:Planet Earth II, Rank:1 
 Title:Planet Earth, Rank:2 
 Title:Breaking Bad, Rank:3 
@@ -49,8 +99,8 @@ Title:Seinfeld, Rank:48
 Title:Das Boot, Rank:49 
 Title:Nathan for You, Rank:50 
 Title:Monty Python's Flying Circus, Rank:51 
-Title:Friends, Rank:52 
-Title:1883, Rank:53 
+Title:1883, Rank:52 
+Title:Friends, Rank:53 
 Title:Pride and Prejudice, Rank:54 
 Title:Black Mirror, Rank:55 
 Title:Twin Peaks, Rank:56 
@@ -66,8 +116,8 @@ Title:Ted Lasso, Rank:65
 Title:Freaks and Geeks, Rank:66 
 Title:Chappelle's Show, Rank:67 
 Title:The Mandalorian, Rank:68 
-Title:Peaky Blinders, Rank:69 
-Title:The West Wing, Rank:70 
+Title:The West Wing, Rank:69 
+Title:Peaky Blinders, Rank:70 
 Title:Steins;Gate, Rank:71 
 Title:Dark, Rank:72 
 Title:BoJack Horseman, Rank:73 
@@ -93,8 +143,8 @@ Title:Battlestar Galactica, Rank:92
 Title:The Thick of It, Rank:93 
 Title:Justice League Unlimited, Rank:94 
 Title:House of Cards, Rank:95 
-Title:One Piece, Rank:96 
-Title:House, Rank:97 
+Title:House, Rank:96 
+Title:One Piece, Rank:97 
 Title:Berserk, Rank:98 
 Title:The Simpsons, Rank:99 
 Title:The Shield, Rank:100 
@@ -106,34 +156,34 @@ Title:Downton Abbey, Rank:105
 Title:The Return of Sherlock Holmes, Rank:106 
 Title:The Grand Tour, Rank:107 
 Title:Mahabharat, Rank:108 
-Title:Ramayan, Rank:109 
-Title:Star Trek: The Next Generation, Rank:110 
-Title:It's a Sin, Rank:111 
+Title:Star Trek: The Next Generation, Rank:109 
+Title:It's a Sin, Rank:110 
+Title:Ramayan, Rank:111 
 Title:Deadwood, Rank:112 
 Title:Top Gear, Rank:113 
 Title:Atlanta, Rank:114 
 Title:Dopesick, Rank:115 
 Title:Lonesome Dove, Rank:116 
-Title:Mad Men, Rank:117 
-Title:Code Geass, Rank:118 
-Title:Haikyuu!!, Rank:119 
-Title:Young Justice, Rank:120 
+Title:Haikyuu!!, Rank:117 
+Title:Young Justice, Rank:118 
+Title:Mad Men, Rank:119 
+Title:Code Geass, Rank:120 
 Title:The Bridge, Rank:121 
 Title:Formula 1: Drive to Survive, Rank:122 
 Title:Sarabhai V/S Sarabhai, Rank:123 
-Title:Blackadder II, Rank:124 
-Title:Monster, Rank:125 
-Title:Peep Show, Rank:126 
+Title:Monster, Rank:124 
+Title:Blackadder II, Rank:125 
+Title:Demon Slayer: Kimetsu no Yaiba, Rank:126 
 Title:The X-Files, Rank:127 
-Title:Parks and Recreation, Rank:128 
-Title:Demon Slayer: Kimetsu no Yaiba, Rank:129 
+Title:Peep Show, Rank:128 
+Title:Parks and Recreation, Rank:129 
 Title:Yellowstone, Rank:130 
 Title:Gomorrah, Rank:131 
 Title:Friday Night Lights, Rank:132 
 Title:Mindhunter, Rank:133 
 Title:Battlestar Galactica, Rank:134 
-Title:The Bureau, Rank:135 
-Title:Anne with an E, Rank:136 
+Title:Anne with an E, Rank:135 
+Title:The Bureau, Rank:136 
 Title:Father Ted, Rank:137 
 Title:Jujutsu Kaisen, Rank:138 
 Title:Dexter, Rank:139 
@@ -151,18 +201,18 @@ Title:The Newsroom, Rank:150
 Title:Crash Landing on You, Rank:151 
 Title:Yes Minister, Rank:152 
 Title:Rurouni Kenshin: Trust and Betrayal, Rank:153 
-Title:Yeh Meri Family, Rank:154 
-Title:Poirot, Rank:155 
-Title:Behzat Ç.: Bir Ankara Polisiyesi, Rank:156 
-Title:QI, Rank:157 
+Title:Poirot, Rank:154 
+Title:Behzat Ç.: Bir Ankara Polisiyesi, Rank:155 
+Title:QI, Rank:156 
+Title:Yeh Meri Family, Rank:157 
 Title:Through the Wormhole, Rank:158 
 Title:The Family Man, Rank:159 
 Title:Justified, Rank:160 
 Title:Mr. Bean, Rank:161 
 Title:Making a Murderer, Rank:162 
 Title:What We Do in the Shadows, Rank:163 
-Title:Naruto: Shippûden, Rank:164 
-Title:North & South, Rank:165 
+Title:North & South, Rank:164 
+Title:Naruto: Shippûden, Rank:165 
 Title:Spaced, Rank:166 
 Title:Justice League, Rank:167 
 Title:Neon Genesis Evangelion, Rank:168 
@@ -171,8 +221,8 @@ Title:Samurai Champloo, Rank:170
 Title:From the Earth to the Moon, Rank:171 
 Title:Long Way Round, Rank:172 
 Title:Pose, Rank:173 
-Title:The Eric Andre Show, Rank:174 
-Title:Mob Psycho 100, Rank:175 
+Title:Mob Psycho 100, Rank:174 
+Title:The Eric Andre Show, Rank:175 
 Title:Twin Peaks, Rank:176 
 Title:Dragon Ball, Rank:177 
 Title:Adventure Time, Rank:178 
@@ -183,10 +233,10 @@ Title:Yes, Prime Minister, Rank:182
 Title:Mr. Robot, Rank:183 
 Title:Letterkenny, Rank:184 
 Title:The IT Crowd, Rank:185 
-Title:Black Sun, Rank:186 
-Title:Mystery Science Theater 3000, Rank:187 
-Title:Coupling, Rank:188 
-Title:Alfred Hitchcock Presents, Rank:189 
+Title:Mystery Science Theater 3000, Rank:186 
+Title:Coupling, Rank:187 
+Title:Alfred Hitchcock Presents, Rank:188 
+Title:Black Sun, Rank:189 
 Title:Detectorists, Rank:190 
 Title:Brass Eye, Rank:191 
 Title:Endeavour, Rank:192 
@@ -218,15 +268,15 @@ Title:My Brilliant Friend, Rank:217
 Title:Black Books, Rank:218 
 Title:Mare of Easttown, Rank:219 
 Title:The Defiant Ones, Rank:220 
-Title:Erased, Rank:221 
-Title:Schitt's Creek, Rank:222 
-Title:Ethos, Rank:223 
-Title:John Adams, Rank:224 
-Title:Harley Quinn, Rank:225 
+Title:Schitt's Creek, Rank:221 
+Title:Erased, Rank:222 
+Title:Harley Quinn, Rank:223 
+Title:Ethos, Rank:224 
+Title:John Adams, Rank:225 
 Title:It's Okay to Not Be Okay, Rank:226 
 Title:The Knick, Rank:227 
-Title:Delhi Crime, Rank:228 
-Title:Dr. Horrible's Sing-Along Blog, Rank:229 
+Title:Dr. Horrible's Sing-Along Blog, Rank:228 
+Title:Delhi Crime, Rank:229 
 Title:Inside No. 9, Rank:230 
 Title:Love, Death & Robots, Rank:231 
 Title:Community, Rank:232 
@@ -234,17 +284,17 @@ Title:Generation War, Rank:233
 Title:The New Batman Adventures, Rank:234 
 Title:The Punisher, Rank:235 
 Title:Horace and Pete, Rank:236 
-Title:The Venture Bros., Rank:237 
-Title:Futurama, Rank:238 
-Title:The Prisoner, Rank:239 
-Title:Regular Show, Rank:240 
+Title:Regular Show, Rank:237 
+Title:The Venture Bros., Rank:238 
+Title:Futurama, Rank:239 
+Title:The Prisoner, Rank:240 
 Title:Jesus of Nazareth, Rank:241 
 Title:Wentworth, Rank:242 
 Title:Clannad: After Story, Rank:243 
 Title:Feud: Bette and Joan, Rank:244 
 Title:After Life, Rank:245 
-Title:Flames, Rank:246 
-Title:Scenes from a Marriage, Rank:247 
-Title:X-Men: The Animated Series, Rank:248 
+Title:X-Men: The Animated Series, Rank:246 
+Title:Flames, Rank:247 
+Title:Scenes from a Marriage, Rank:248 
 Title:Luther, Rank:249 
 Title:Ghost in the Shell: Stand Alone Complex, Rank:250 
