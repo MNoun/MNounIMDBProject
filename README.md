@@ -16,6 +16,16 @@ Description:
    - show_data.db: database for show data
    - tests.py: automated tests for functions in main.py, creates and uses a test database
    - test_db.db: test database
+   
+   Databases:
+   - show_data.db
+      - Includes two tables: show_data and ratings_data
+      - Official data from the top 250 shows and user ratings
+      - Ratings_data includes all needed data but should be reformatted to be more clear
+   - test_db.db
+      - Includes two tables: show_data and ratings_data
+      - Show_data only has one entry to use as test data for tests.py
+      - ratings_data is empty
 
 To Do:
   - Reformat ratings_data table in show_data.db
