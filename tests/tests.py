@@ -6,7 +6,7 @@ import sqlite3
 
 
 def test_show_data():  # test 1: retrieves 250
-    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.apiKey}"
+    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"
     response = requests.get(imdburl)  # gets a response from imDb
     data = response.json()
     datalist = data['items']  # makes a list of dict

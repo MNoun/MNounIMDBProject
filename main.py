@@ -186,7 +186,7 @@ def db_populate_ratings(connection: sqlite3.Connection, cursor: sqlite3.Cursor,
 
 
 def main():  # main function
-    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.apiKey}"
+    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"
     response = requests.get(imdburl)  # gets a response from imDb
     if response.status_code != 200:  # error code
         print("Error!")
@@ -195,27 +195,27 @@ def main():  # main function
     datalist = data['items']  # makes a list of dict
 
     # gets rating data for required shows
-    rank1 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt5491994"  # getting data from rank 1 show
+    rank1 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt5491994"  # getting data from rank 1 show
     response1 = requests.get(rank1)
     data1 = response1.json()
     iddata1 = {key: data1[key] for key in data1.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
     datalist1 = data1['ratings']
-    rank50 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt2297757"  # getting data from rank 50 show
+    rank50 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt2297757"  # getting data from rank 50 show
     response2 = requests.get(rank50)
     data2 = response2.json()
     iddata2 = {key: data2[key] for key in data2.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
     datalist2 = data2['ratings']
-    rank100 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt0286486"  # getting data from rank 100 show
+    rank100 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt0286486"  # getting data from rank 100 show
     response3 = requests.get(rank100)
     data3 = response3.json()
     iddata3 = {key: data3[key] for key in data3.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
     datalist3 = data3['ratings']
-    rank200 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt1492966"  # getting data from rank 200 show
+    rank200 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt1492966"  # getting data from rank 200 show
     response4 = requests.get(rank200)
     data4 = response4.json()
     iddata4 = {key: data4[key] for key in data4.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
     datalist4 = data4['ratings']
-    rankwot = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt7462410"  # getting data from Wheel of
+    rankwot = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt7462410"  # getting data from Wheel of
     # Time show
     response5 = requests.get(rankwot)
     data5 = response5.json()
