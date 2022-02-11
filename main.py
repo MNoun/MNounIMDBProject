@@ -1,10 +1,14 @@
 # Created by: Mitchell Noun
 # Date created: 1/29/22
 # Class: COMP490 Senior Design and Development
-# Assignment: Project 1 Sprint 1
+# Assignment: Project 1
 import requests
 import Secrets
+import sqlite3
+from typing import Tuple
 
+
+# ------------------------------------ Sprint 1 ------------------------------------------ #
 
 def get_data(datalist):  # gets raw data from top 250
     with open("RawData.txt", "w") as rawData:  # writes all data to RawData.txt
@@ -25,27 +29,8 @@ def write_data(datalist):  # writes data in readable format in ShowData.txt
     return
 
 
-def get_ratings():  # gets the required user ratings and writes them to ShowData.txt
-    rank1 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt5491994"  # getting data from rank 1 show
-    response1 = requests.get(rank1)
-    data1 = response1.json()
-    datalist1 = data1['ratings']
-    rank50 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt2297757"  # getting data from rank 50 show
-    response2 = requests.get(rank50)
-    data2 = response2.json()
-    datalist2 = data2['ratings']
-    rank100 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt0286486"  # getting data from rank 100 show
-    response3 = requests.get(rank100)
-    data3 = response3.json()
-    datalist3 = data3['ratings']
-    rank200 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt1492966"  # getting data from rank 200 show
-    response4 = requests.get(rank200)
-    data4 = response4.json()
-    datalist4 = data4['ratings']
-    rankwot = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt7462410"  # getting data from Wheel of Time show
-    response5 = requests.get(rankwot)
-    data5 = response5.json()
-    datalist5 = data5['ratings']
+def get_ratings(datalist1, datalist2, datalist3, datalist4, datalist5):
+    # gets the required user ratings and writes them to ShowData.txt
     with open("ShowData.txt", "w") as ShowData:
         for ratings in datalist1:
             ShowData.write("Rank 1: Rating:%s, Percent:%s, Votes:%s \n" % (ratings['rating'], ratings['percent'],
@@ -58,10 +43,145 @@ def get_ratings():  # gets the required user ratings and writes them to ShowData
                                                                              ratings['votes']))
         for ratings in datalist4:
             ShowData.write("Rank 200: Rating:%s, Percent:%s, Votes:%s \n" % (ratings['rating'], ratings['percent'],
-                                                                            ratings['votes']))
+                                                                             ratings['votes']))
         for ratings in datalist5:
             ShowData.write("Wheel of Time: Rating:%s, Percent:%s, Votes:%s \n" % (ratings['rating'], ratings['percent'],
-                                                                            ratings['votes']))
+                                                                                  ratings['votes']))
+    return
+
+
+# ------------------------------------ Sprint 2 ------------------------------------------ #
+
+
+def db_setup(cursor: sqlite3.Cursor):  # sets up the two needed databases
+    # creates database for top250 data
+    cursor.execute('''CREATE TABLE IF NOT EXISTS show_data(
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    fullTitle TEXT NOT NULL,
+    crew TEXT NOT NULL,
+    showYear INTEGER NOT NULL,
+    imdbRating FLOAT NOT NULL,
+    imdbRatingCount FLOAT NOT NULL
+    );''')
+    # creates database for ratings data
+    cursor.execute('''CREATE TABLE IF NOT EXISTS ratings_data(
+    imdbID TEXT DEFAULT '',
+    totalRating FLOAT DEFAULT 0,
+    totalVotes INTEGER DEFAULT 0,
+    tenRating FLOAT NOT NULL ,
+    tenVotes INTEGER NOT NULL ,
+    nineRating FLOAT NOT NULL ,
+    nineVotes INTEGER NOT NULL ,
+    eightRating FLOAT NOT NULL ,
+    eightVotes INTEGER NOT NULL ,
+    sevenRating FLOAT NOT NULL ,
+    sevenVotes INTEGER NOT NULL ,
+    sixRating FLOAT NOT NULL ,
+    sixVotes INTEGER NOT NULL ,
+    fiveRating FLOAT NOT NULL ,
+    fiveVotes INTEGER NOT NULL ,
+    fourRating FLOAT NOT NULL ,
+    fourVotes INTEGER NOT NULL ,
+    threeRating FLOAT NOT NULL ,
+    threeVotes INTEGER NOT NULL ,
+    twoRating FLOAT NOT NULL ,
+    twoVotes INTEGER NOT NULL ,
+    oneRating FLOAT NOT NULL ,
+    oneVotes INTEGER NOT NULL , 
+    FOREIGN KEY (imdbID) REFERENCES show_data (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+    );''')
+    return
+
+
+def db_open(filename: str) -> Tuple[sqlite3.Connection, sqlite3.Cursor]:  # opens database
+    connection = sqlite3.connect(filename)
+    cursor = connection.cursor()
+    return connection, cursor
+
+
+def db_close(connection: sqlite3.Connection):  # closes database
+    connection.commit()
+    connection.close()
+    return
+
+
+def db_populate_top250(connection: sqlite3.Connection, cursor: sqlite3.Cursor, datalist):
+    # populates show_data
+    for item in datalist:
+        cursor.execute("""INSERT INTO show_data (id, title, fullTitle, crew, showYear, imdbRating, imdbRatingCount)
+        VALUES (?,?,?,?,?,?,?)""",
+                       (item['id'], item['title'], item['fullTitle'], item['crew'], item['year'],
+                        item['imDbRating'], item['imDbRatingCount']))
+    connection.commit()
+    return
+
+
+def db_populate_ratings(connection: sqlite3.Connection, cursor: sqlite3.Cursor,
+                        datalist1, iddata1, datalist2, iddata2, datalist3,
+                        iddata3, datalist4, iddata4, datalist5, iddata5):
+    # populates ratings_data
+    for ratings in datalist1:
+        cursor.execute("""INSERT INTO ratings_data (imdbID, totalRating, totalVotes, tenRating, tenVotes,
+         nineRating, nineVotes, eightRating, eightVotes, sevenRating, sevenVotes, sixRating, sixVotes, 
+         fiveRating, fiveVotes, fourRating, fourVotes, threeRating, threeVotes, twoRating, twoVotes,
+          oneRating, oneVotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (iddata1['imDbId'], iddata1['totalRating'], iddata1['totalRatingVotes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes']))
+
+    for ratings in datalist2:
+        cursor.execute("""INSERT INTO ratings_data (imdbID, totalRating, totalVotes, tenRating, tenVotes,
+         nineRating, nineVotes, eightRating, eightVotes, sevenRating, sevenVotes, sixRating, sixVotes, 
+         fiveRating, fiveVotes, fourRating, fourVotes, threeRating, threeVotes, twoRating, twoVotes,
+          oneRating, oneVotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (iddata2['imDbId'], iddata2['totalRating'], iddata2['totalRatingVotes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes']))
+
+    for ratings in datalist3:
+        cursor.execute("""INSERT INTO ratings_data (imdbID, totalRating, totalVotes, tenRating, tenVotes,
+         nineRating, nineVotes, eightRating, eightVotes, sevenRating, sevenVotes, sixRating, sixVotes, 
+         fiveRating, fiveVotes, fourRating, fourVotes, threeRating, threeVotes, twoRating, twoVotes,
+          oneRating, oneVotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (iddata3['imDbId'], iddata3['totalRating'], iddata3['totalRatingVotes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes']))
+
+    for ratings in datalist4:
+        cursor.execute("""INSERT INTO ratings_data (imdbID, totalRating, totalVotes, tenRating, tenVotes,
+         nineRating, nineVotes, eightRating, eightVotes, sevenRating, sevenVotes, sixRating, sixVotes, 
+         fiveRating, fiveVotes, fourRating, fourVotes, threeRating, threeVotes, twoRating, twoVotes,
+          oneRating, oneVotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (iddata4['imDbId'], iddata4['totalRating'], iddata4['totalRatingVotes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes']))
+
+    for ratings in datalist5:
+        cursor.execute("""INSERT INTO ratings_data (imdbID, totalRating, totalVotes, tenRating, tenVotes,
+         nineRating, nineVotes, eightRating, eightVotes, sevenRating, sevenVotes, sixRating, sixVotes, 
+         fiveRating, fiveVotes, fourRating, fourVotes, threeRating, threeVotes, twoRating, twoVotes,
+          oneRating, oneVotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (iddata5['imDbId'], iddata5['totalRating'], iddata5['totalRatingVotes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes'],
+                        ratings['percent'], ratings['votes'], ratings['percent'], ratings['votes']))
+    connection.commit()
     return
 
 
@@ -74,10 +194,49 @@ def main():  # main function
     data = response.json()
     datalist = data['items']  # makes a list of dict
 
-    # function calls
-    get_data(datalist)
-    get_ratings()
-    write_data(datalist)
+    # gets rating data for required shows
+    rank1 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt5491994"  # getting data from rank 1 show
+    response1 = requests.get(rank1)
+    data1 = response1.json()
+    iddata1 = {key: data1[key] for key in data1.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
+    datalist1 = data1['ratings']
+    rank50 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt2297757"  # getting data from rank 50 show
+    response2 = requests.get(rank50)
+    data2 = response2.json()
+    iddata2 = {key: data2[key] for key in data2.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
+    datalist2 = data2['ratings']
+    rank100 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt0286486"  # getting data from rank 100 show
+    response3 = requests.get(rank100)
+    data3 = response3.json()
+    iddata3 = {key: data3[key] for key in data3.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
+    datalist3 = data3['ratings']
+    rank200 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt1492966"  # getting data from rank 200 show
+    response4 = requests.get(rank200)
+    data4 = response4.json()
+    iddata4 = {key: data4[key] for key in data4.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
+    datalist4 = data4['ratings']
+    rankwot = f"https://imdb-api.com/en/API/UserRatings/{Secrets.apiKey}/tt7462410"  # getting data from Wheel of
+    # Time show
+    response5 = requests.get(rankwot)
+    data5 = response5.json()
+    iddata5 = {key: data5[key] for key in data5.keys() & {'imDbId', 'totalRating', 'totalRatingVotes'}}
+    datalist5 = data5['ratings']
+
+    name = 'show_data.db'
+    connection, cursor = db_open(name)
+
+    # function calls for sprint 1
+    #get_data(datalist)
+    #get_ratings(datalist1, datalist2, datalist3, datalist4, datalist5)
+    #write_data(datalist)
+    # function calls for sprint 2
+    #db_setup(cursor)
+    # db_populate_top250(connection, cursor, datalist)
+    #db_populate_ratings(connection, cursor,
+                        #datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
+                        #iddata5)
+    #db_close(connection)
+
     return
 
 

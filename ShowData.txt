@@ -38,16 +38,16 @@ Rank 200: Rating:4, Percent:0.9%, Votes:705
 Rank 200: Rating:3, Percent:0.7%, Votes:516 
 Rank 200: Rating:2, Percent:0.6%, Votes:451 
 Rank 200: Rating:1, Percent:2.4%, Votes:1856 
-Wheel of Time: Rating:10, Percent:25.6%, Votes:21257 
-Wheel of Time: Rating:9, Percent:14.1%, Votes:11740 
-Wheel of Time: Rating:8, Percent:20.1%, Votes:16668 
-Wheel of Time: Rating:7, Percent:14.4%, Votes:11953 
-Wheel of Time: Rating:6, Percent:7.3%, Votes:6051 
-Wheel of Time: Rating:5, Percent:4.3%, Votes:3534 
-Wheel of Time: Rating:4, Percent:2.5%, Votes:2105 
-Wheel of Time: Rating:3, Percent:2.5%, Votes:2076 
-Wheel of Time: Rating:2, Percent:2.3%, Votes:1938 
-Wheel of Time: Rating:1, Percent:6.9%, Votes:5732 
+Wheel of Time: Rating:10, Percent:25.4%, Votes:21408 
+Wheel of Time: Rating:9, Percent:14.1%, Votes:11874 
+Wheel of Time: Rating:8, Percent:20.1%, Votes:16979 
+Wheel of Time: Rating:7, Percent:14.6%, Votes:12285 
+Wheel of Time: Rating:6, Percent:7.4%, Votes:6209 
+Wheel of Time: Rating:5, Percent:4.3%, Votes:3610 
+Wheel of Time: Rating:4, Percent:2.5%, Votes:2141 
+Wheel of Time: Rating:3, Percent:2.5%, Votes:2112 
+Wheel of Time: Rating:2, Percent:2.3%, Votes:1964 
+Wheel of Time: Rating:1, Percent:6.9%, Votes:5805 
 Title:Planet Earth II, Rank:1 
 Title:Planet Earth, Rank:2 
 Title:Breaking Bad, Rank:3 
@@ -67,8 +67,8 @@ Title:The Last Dance, Rank:16
 Title:Life, Rank:17 
 Title:Fullmetal Alchemist: Brotherhood, Rank:18 
 Title:Sherlock, Rank:19 
-Title:Arcane, Rank:20 
-Title:The Vietnam War, Rank:21 
+Title:The Vietnam War, Rank:20 
+Title:Arcane, Rank:21 
 Title:Scam 1992: The Harshad Mehta Story, Rank:22 
 Title:The Beatles: Get Back, Rank:23 
 Title:The Twilight Zone, Rank:24 
@@ -83,8 +83,8 @@ Title:Death Note, Rank:32
 Title:Dekalog, Rank:33 
 Title:True Detective, Rank:34 
 Title:Attack on Titan, Rank:35 
-Title:Cowboy Bebop, Rank:36 
-Title:The Civil War, Rank:37 
+Title:The Civil War, Rank:36 
+Title:Cowboy Bebop, Rank:37 
 Title:Hunter x Hunter, Rank:38 
 Title:Fargo, Rank:39 
 Title:The Office, Rank:40 
@@ -96,10 +96,10 @@ Title:TVF Pitchers, Rank:45
 Title:Last Week Tonight with John Oliver, Rank:46 
 Title:Gravity Falls, Rank:47 
 Title:Seinfeld, Rank:48 
-Title:Das Boot, Rank:49 
-Title:Nathan for You, Rank:50 
-Title:Monty Python's Flying Circus, Rank:51 
-Title:1883, Rank:52 
+Title:1883, Rank:49 
+Title:Das Boot, Rank:50 
+Title:Nathan for You, Rank:51 
+Title:Monty Python's Flying Circus, Rank:52 
 Title:Friends, Rank:53 
 Title:Pride and Prejudice, Rank:54 
 Title:Black Mirror, Rank:55 
@@ -115,8 +115,8 @@ Title:Narcos, Rank:64
 Title:Ted Lasso, Rank:65 
 Title:Freaks and Geeks, Rank:66 
 Title:Chappelle's Show, Rank:67 
-Title:The Mandalorian, Rank:68 
-Title:The West Wing, Rank:69 
+Title:The West Wing, Rank:68 
+Title:The Mandalorian, Rank:69 
 Title:Peaky Blinders, Rank:70 
 Title:Steins;Gate, Rank:71 
 Title:Dark, Rank:72 
@@ -135,109 +135,109 @@ Title:Leyla and Mecnun, Rank:84
 Title:Arrested Development, Rank:85 
 Title:Six Feet Under, Rank:86 
 Title:South Park, Rank:87 
-Title:Stranger Things, Rank:88 
-Title:The Adventures of Sherlock Holmes, Rank:89 
+Title:The Adventures of Sherlock Holmes, Rank:88 
+Title:Stranger Things, Rank:89 
 Title:The Marvelous Mrs. Maisel, Rank:90 
 Title:The Boys, Rank:91 
-Title:Battlestar Galactica, Rank:92 
-Title:The Thick of It, Rank:93 
+Title:The Thick of It, Rank:92 
+Title:Battlestar Galactica, Rank:93 
 Title:Justice League Unlimited, Rank:94 
 Title:House of Cards, Rank:95 
 Title:House, Rank:96 
-Title:One Piece, Rank:97 
-Title:Berserk, Rank:98 
+Title:Berserk, Rank:97 
+Title:One Piece, Rank:98 
 Title:The Simpsons, Rank:99 
 Title:The Shield, Rank:100 
-Title:The Crown, Rank:101 
-Title:Aspirants, Rank:102 
-Title:The Jinx: The Life and Deaths of Robert Durst, Rank:103 
-Title:Line of Duty, Rank:104 
-Title:Downton Abbey, Rank:105 
-Title:The Return of Sherlock Holmes, Rank:106 
-Title:The Grand Tour, Rank:107 
-Title:Mahabharat, Rank:108 
-Title:Star Trek: The Next Generation, Rank:109 
-Title:It's a Sin, Rank:110 
-Title:Ramayan, Rank:111 
+Title:Aspirants, Rank:101 
+Title:The Crown, Rank:102 
+Title:Mahabharat, Rank:103 
+Title:The Return of Sherlock Holmes, Rank:104 
+Title:Line of Duty, Rank:105 
+Title:Downton Abbey, Rank:106 
+Title:The Jinx: The Life and Deaths of Robert Durst, Rank:107 
+Title:The Grand Tour, Rank:108 
+Title:Ramayan, Rank:109 
+Title:Star Trek: The Next Generation, Rank:110 
+Title:It's a Sin, Rank:111 
 Title:Deadwood, Rank:112 
 Title:Top Gear, Rank:113 
 Title:Atlanta, Rank:114 
-Title:Dopesick, Rank:115 
+Title:Young Justice, Rank:115 
 Title:Lonesome Dove, Rank:116 
-Title:Haikyuu!!, Rank:117 
-Title:Young Justice, Rank:118 
+Title:Dopesick, Rank:117 
+Title:Haikyuu!!, Rank:118 
 Title:Mad Men, Rank:119 
-Title:Code Geass, Rank:120 
-Title:The Bridge, Rank:121 
-Title:Formula 1: Drive to Survive, Rank:122 
-Title:Sarabhai V/S Sarabhai, Rank:123 
-Title:Monster, Rank:124 
+Title:The Bridge, Rank:120 
+Title:Code Geass, Rank:121 
+Title:Sarabhai V/S Sarabhai, Rank:122 
+Title:Formula 1: Drive to Survive, Rank:123 
+Title:Demon Slayer: Kimetsu no Yaiba, Rank:124 
 Title:Blackadder II, Rank:125 
-Title:Demon Slayer: Kimetsu no Yaiba, Rank:126 
-Title:The X-Files, Rank:127 
-Title:Peep Show, Rank:128 
-Title:Parks and Recreation, Rank:129 
-Title:Yellowstone, Rank:130 
+Title:Monster, Rank:126 
+Title:Peep Show, Rank:127 
+Title:Yellowstone, Rank:128 
+Title:The X-Files, Rank:129 
+Title:Parks and Recreation, Rank:130 
 Title:Gomorrah, Rank:131 
 Title:Friday Night Lights, Rank:132 
 Title:Mindhunter, Rank:133 
 Title:Battlestar Galactica, Rank:134 
 Title:Anne with an E, Rank:135 
-Title:The Bureau, Rank:136 
-Title:Father Ted, Rank:137 
+Title:Father Ted, Rank:136 
+Title:The Bureau, Rank:137 
 Title:Jujutsu Kaisen, Rank:138 
 Title:Dexter, Rank:139 
 Title:The Haunting of Hill House, Rank:140 
-Title:Westworld, Rank:141 
-Title:The Bugs Bunny Show, Rank:142 
-Title:Blackadder the Third, Rank:143 
+Title:The Bugs Bunny Show, Rank:141 
+Title:Blackadder the Third, Rank:142 
+Title:Westworld, Rank:143 
 Title:Daredevil, Rank:144 
 Title:This Is Us, Rank:145 
 Title:Panchayat, Rank:146 
-Title:Archer, Rank:147 
-Title:The Queen's Gambit, Rank:148 
-Title:Gullak, Rank:149 
-Title:The Newsroom, Rank:150 
-Title:Crash Landing on You, Rank:151 
+Title:Gullak, Rank:147 
+Title:Archer, Rank:148 
+Title:The Queen's Gambit, Rank:149 
+Title:Crash Landing on You, Rank:150 
+Title:The Newsroom, Rank:151 
 Title:Yes Minister, Rank:152 
 Title:Rurouni Kenshin: Trust and Betrayal, Rank:153 
-Title:Poirot, Rank:154 
-Title:Behzat Ç.: Bir Ankara Polisiyesi, Rank:155 
-Title:QI, Rank:156 
-Title:Yeh Meri Family, Rank:157 
+Title:Yeh Meri Family, Rank:154 
+Title:Poirot, Rank:155 
+Title:Behzat Ç.: Bir Ankara Polisiyesi, Rank:156 
+Title:QI, Rank:157 
 Title:Through the Wormhole, Rank:158 
 Title:The Family Man, Rank:159 
 Title:Justified, Rank:160 
-Title:Mr. Bean, Rank:161 
-Title:Making a Murderer, Rank:162 
-Title:What We Do in the Shadows, Rank:163 
-Title:North & South, Rank:164 
-Title:Naruto: Shippûden, Rank:165 
+Title:What We Do in the Shadows, Rank:161 
+Title:Mr. Bean, Rank:162 
+Title:Making a Murderer, Rank:163 
+Title:Naruto: Shippûden, Rank:164 
+Title:North & South, Rank:165 
 Title:Spaced, Rank:166 
 Title:Justice League, Rank:167 
 Title:Neon Genesis Evangelion, Rank:168 
-Title:Boardwalk Empire, Rank:169 
-Title:Samurai Champloo, Rank:170 
+Title:Samurai Champloo, Rank:169 
+Title:Boardwalk Empire, Rank:170 
 Title:From the Earth to the Moon, Rank:171 
-Title:Long Way Round, Rank:172 
-Title:Pose, Rank:173 
-Title:Mob Psycho 100, Rank:174 
-Title:The Eric Andre Show, Rank:175 
+Title:The Eric Andre Show, Rank:172 
+Title:Mob Psycho 100, Rank:173 
+Title:Pose, Rank:174 
+Title:Long Way Round, Rank:175 
 Title:Twin Peaks, Rank:176 
-Title:Dragon Ball, Rank:177 
-Title:Adventure Time, Rank:178 
+Title:Adventure Time, Rank:177 
+Title:Dragon Ball, Rank:178 
 Title:Flight of the Conchords, Rank:179 
-Title:Cobra Kai, Rank:180 
-Title:Dragon Ball, Rank:181 
-Title:Yes, Prime Minister, Rank:182 
+Title:Dragon Ball, Rank:180 
+Title:Yes, Prime Minister, Rank:181 
+Title:Cobra Kai, Rank:182 
 Title:Mr. Robot, Rank:183 
-Title:Letterkenny, Rank:184 
-Title:The IT Crowd, Rank:185 
+Title:The IT Crowd, Rank:184 
+Title:Letterkenny, Rank:185 
 Title:Mystery Science Theater 3000, Rank:186 
-Title:Coupling, Rank:187 
-Title:Alfred Hitchcock Presents, Rank:188 
-Title:Black Sun, Rank:189 
-Title:Detectorists, Rank:190 
+Title:Black Sun, Rank:187 
+Title:Coupling, Rank:188 
+Title:Detectorists, Rank:189 
+Title:Alfred Hitchcock Presents, Rank:190 
 Title:Brass Eye, Rank:191 
 Title:Endeavour, Rank:192 
 Title:Homicide: Life on the Street, Rank:193 
@@ -245,19 +245,19 @@ Title:Fullmetal Alchemist, Rank:194
 Title:Skam, Rank:195 
 Title:Doctor Who, Rank:196 
 Title:Silicon Valley, Rank:197 
-Title:The Expanse, Rank:198 
-Title:Impractical Jokers, Rank:199 
-Title:Louie, Rank:200 
-Title:Generation Kill, Rank:201 
-Title:Mr Inbetween, Rank:202 
-Title:Hannibal, Rank:203 
-Title:Ezel, Rank:204 
-Title:Shameless, Rank:205 
-Title:Spartacus: Gods of the Arena, Rank:206 
+Title:Mr Inbetween, Rank:198 
+Title:The Expanse, Rank:199 
+Title:Impractical Jokers, Rank:200 
+Title:Louie, Rank:201 
+Title:Ezel, Rank:202 
+Title:Generation Kill, Rank:203 
+Title:Hannibal, Rank:204 
+Title:Spartacus: Gods of the Arena, Rank:205 
+Title:Shameless, Rank:206 
 Title:The Office, Rank:207 
 Title:Samurai Jack, Rank:208 
-Title:The Night Of, Rank:209 
-Title:Chef's Table, Rank:210 
+Title:Chef's Table, Rank:209 
+Title:The Night Of, Rank:210 
 Title:Whose Line Is It Anyway?, Rank:211 
 Title:Sons of Anarchy, Rank:212 
 Title:I'm Alan Partridge, Rank:213 
@@ -267,34 +267,34 @@ Title:Your Lie in April, Rank:216
 Title:My Brilliant Friend, Rank:217 
 Title:Black Books, Rank:218 
 Title:Mare of Easttown, Rank:219 
-Title:The Defiant Ones, Rank:220 
-Title:Schitt's Creek, Rank:221 
-Title:Erased, Rank:222 
-Title:Harley Quinn, Rank:223 
+Title:Schitt's Creek, Rank:220 
+Title:Erased, Rank:221 
+Title:The Defiant Ones, Rank:222 
+Title:John Adams, Rank:223 
 Title:Ethos, Rank:224 
-Title:John Adams, Rank:225 
+Title:Harley Quinn, Rank:225 
 Title:It's Okay to Not Be Okay, Rank:226 
 Title:The Knick, Rank:227 
-Title:Dr. Horrible's Sing-Along Blog, Rank:228 
-Title:Delhi Crime, Rank:229 
+Title:Delhi Crime, Rank:228 
+Title:Dr. Horrible's Sing-Along Blog, Rank:229 
 Title:Inside No. 9, Rank:230 
 Title:Love, Death & Robots, Rank:231 
 Title:Community, Rank:232 
 Title:Generation War, Rank:233 
-Title:The New Batman Adventures, Rank:234 
-Title:The Punisher, Rank:235 
-Title:Horace and Pete, Rank:236 
-Title:Regular Show, Rank:237 
-Title:The Venture Bros., Rank:238 
-Title:Futurama, Rank:239 
-Title:The Prisoner, Rank:240 
-Title:Jesus of Nazareth, Rank:241 
-Title:Wentworth, Rank:242 
-Title:Clannad: After Story, Rank:243 
-Title:Feud: Bette and Joan, Rank:244 
-Title:After Life, Rank:245 
-Title:X-Men: The Animated Series, Rank:246 
-Title:Flames, Rank:247 
-Title:Scenes from a Marriage, Rank:248 
+Title:Regular Show, Rank:234 
+Title:The New Batman Adventures, Rank:235 
+Title:The Punisher, Rank:236 
+Title:Horace and Pete, Rank:237 
+Title:Futurama, Rank:238 
+Title:The Prisoner, Rank:239 
+Title:The Venture Bros., Rank:240 
+Title:Wentworth, Rank:241 
+Title:Jesus of Nazareth, Rank:242 
+Title:Feud: Bette and Joan, Rank:243 
+Title:Clannad: After Story, Rank:244 
+Title:Flames, Rank:245 
+Title:Scenes from a Marriage, Rank:246 
+Title:X-Men: The Animated Series, Rank:247 
+Title:After Life, Rank:248 
 Title:Luther, Rank:249 
-Title:Ghost in the Shell: Stand Alone Complex, Rank:250 
+Title:Guardian: The Lonely and Great God, Rank:250 
