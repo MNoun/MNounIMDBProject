@@ -29,3 +29,4 @@ Description:
 
 To Do:
   - Reformat ratings_data table in show_data.db
+  - Fix flake8
