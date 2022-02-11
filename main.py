@@ -226,16 +226,16 @@ def main():  # main function
     connection, cursor = db_open(name)
 
     # function calls for sprint 1
-    #get_data(datalist)
-    #get_ratings(datalist1, datalist2, datalist3, datalist4, datalist5)
-    #write_data(datalist)
+    get_data(datalist)
+    get_ratings(datalist1, datalist2, datalist3, datalist4, datalist5)
+    write_data(datalist)
     # function calls for sprint 2
-    #db_setup(cursor)
-    # db_populate_top250(connection, cursor, datalist)
-    #db_populate_ratings(connection, cursor,
-                        #datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
-                        #iddata5)
-    #db_close(connection)
+    db_setup(cursor)
+    db_populate_top250(connection, cursor, datalist)
+    db_populate_ratings(connection, cursor,
+                        datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
+                        iddata5)
+    db_close(connection)
 
     return
 
