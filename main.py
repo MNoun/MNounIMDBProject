@@ -185,14 +185,106 @@ def db_populate_ratings(connection: sqlite3.Connection, cursor: sqlite3.Cursor,
     return
 
 
+# ------------------------------------ Sprint 3 ------------------------------------------ #
+
+
+def db_setup2(cursor: sqlite3.Cursor):  # creates new tables for Sprint 3
+    # creates table for most popular tv shows
+    cursor.execute('''CREATE TABLE IF NOT EXISTS popular_tv_data(
+    id TEXT PRIMARY KEY,
+    rank INTEGER NOT NULL,
+    rankUpDown FLOAT NOT NULL,
+    title TEXT NOT NULL,
+    fullTitle TEXT NOT NULL,
+    crew TEXT NOT NULL,
+    showYear INTEGER NOT NULL,
+    imdbRating FLOAT NOT NULL,
+    imdbRatingCount FLOAT NOT NULL
+    );''')
+    # creates table for top 250 movies
+    cursor.execute('''CREATE TABLE IF NOT EXISTS top250_movie_data(
+    id TEXT PRIMARY KEY,
+    rank INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    fullTitle TEXT NOT NULL,
+    crew TEXT NOT NULL,
+    movieYear INTEGER NOT NULL,
+    imdbRating FLOAT NOT NULL,
+    imdbRatingCount FLOAT NOT NULL
+    );''')
+    # creates table for most popular movies
+    cursor.execute('''CREATE TABLE IF NOT EXISTS popular_movie_data(
+    id TEXT PRIMARY KEY,
+    rank INTEGER NOT NULL,
+    rankUpDown FLOAT NOT NULL,
+    title TEXT NOT NULL,
+    fullTitle TEXT NOT NULL,
+    crew TEXT NOT NULL,
+    showYear INTEGER NOT NULL,
+    imdbRating FLOAT NOT NULL,
+    imdbRatingCount FLOAT NOT NULL
+    );''')
+    # creates table for rank up and down
+    cursor.execute('''CREATE TABLE IF NOT EXISTS rank_updown_data(
+    id TEXT,
+    title TEXT NOT NULL ,
+    rank INTEGER NOT NULL ,
+    rankUpDown FLOAT NOT NULL 
+    )''')
+    return
+
+
+def db_populate_popular_tv():  # populates popular_tv_data
+    return
+
+
+def db_populate_top250_movies():  # populates top250_movie_data
+    return
+
+
+def db_populate_popular_movies():  # populates popular movie data
+    return
+
+
+def db_populate_rank_updown():  # populates rank_updown_data
+    return
+
+
+# ------------------------------------ Main ------------------------------------------ #
+
+
 def main():  # main function
-    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"
+    imdburl = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprints 1 and 2
     response = requests.get(imdburl)  # gets a response from imDb
     if response.status_code != 200:  # error code
         print("Error!")
         return
     data = response.json()
     datalist = data['items']  # makes a list of dict
+
+    imdburl_tv = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 most popular tv shows
+    response_tv = requests.get(imdburl_tv)  # gets a response from imDb
+    if response_tv.status_code != 200:  # error code
+        print("Error!")
+        return
+    data_tv = response_tv.json()
+    datalist_tv = data_tv['items']  # makes a list of dict
+
+    imdburl_topmovies = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 top250 movies
+    response_topmovies = requests.get(imdburl_topmovies)  # gets a response from imDb
+    if response_topmovies.status_code != 200:  # error code
+        print("Error!")
+        return
+    data_topmovies = response_topmovies.json()
+    datalist_topmovies = data_topmovies['items']  # makes a list of dict
+
+    imdburl_movies = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 most popular movies
+    response_movies = requests.get(imdburl_movies)  # gets a response from imDb
+    if response_movies.status_code != 200:  # error code
+        print("Error!")
+        return
+    data_movies = response_movies.json()
+    datalist_movies = data_movies['items']  # makes a list of dict
 
     # gets rating data for required shows
     rank1 = f"https://imdb-api.com/en/API/UserRatings/{Secrets.API_KEY}/tt5491994"  # getting data from rank 1 show
@@ -236,6 +328,7 @@ def main():  # main function
                         datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
                         iddata5)
     db_close(connection)
+    # function calls for sprint 3
 
     return
 
