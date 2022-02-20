@@ -226,27 +226,42 @@ def db_setup2(cursor: sqlite3.Cursor):  # creates new tables for Sprint 3
     );''')
     # creates table for rank up and down
     cursor.execute('''CREATE TABLE IF NOT EXISTS rank_updown_data(
-    id TEXT,
+    id TEXT NOT NULL ,
     title TEXT NOT NULL ,
     rank INTEGER NOT NULL ,
-    rankUpDown FLOAT NOT NULL 
+    rankUpDown FLOAT NOT NULL,
+    imdbRating FLOAT NOT NULL,
+    imdbRatingCount FLOAT NOT NULL,
+    FOREIGN KEY (id) REFERENCES popular_movie_data (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
     )''')
     return
 
 
-def db_populate_popular_tv():  # populates popular_tv_data
+# populates popular_tv_data
+def db_populate_popular_tv(connection: sqlite3.Connection, cursor: sqlite3.Cursor, datalist_tv):
+    for item in datalist_tv:
+        cursor.execute("""INSERT INTO popular_tv_data (id, rank, rankUpDown, title, fullTitle,
+         crew, showYear, imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?,?,?,?)""",
+                       (item['id'], item['rank'], item['rankUpDown'], item['title'], item['fullTitle'],
+                        item['crew'], item['year'], item['imDbRating'], item['imDbRatingCount']))
+    connection.commit()
     return
 
 
-def db_populate_top250_movies():  # populates top250_movie_data
+# populates top250_movie_data
+def db_populate_top250_movies(connection: sqlite3.Connection, cursor: sqlite3.Cursor, datalist_topmovies):
+
     return
 
 
-def db_populate_popular_movies():  # populates popular movie data
+# populates popular movie data
+def db_populate_popular_movies():
     return
 
 
-def db_populate_rank_updown():  # populates rank_updown_data
+# populates rank_updown_data
+def db_populate_rank_updown():
     return
 
 
@@ -325,10 +340,13 @@ def main():  # main function
     db_setup(cursor)
     db_populate_top250(connection, cursor, datalist)
     db_populate_ratings(connection, cursor,
-                        datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
-                        iddata5)
+                         datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
+                         iddata5)
     db_close(connection)
     # function calls for sprint 3
+    db_setup2(cursor)
+    db_populate_popular_tv(connection, cursor, datalist_tv)
+    db_populate_top250_movies(connection, cursor, datalist_topmovies)
 
     return
 
