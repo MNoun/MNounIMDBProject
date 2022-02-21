@@ -271,8 +271,63 @@ def db_populate_popular_movies(connection: sqlite3.Connection, cursor: sqlite3.C
     return
 
 
-# populates rank_updown_data
-def db_populate_rank_updown():
+# finds the biggest movers and populates rank_updown_data, 3 positive, 1 negative
+def get_rank_updown(connection: sqlite3.Connection, cursor: sqlite3.Cursor):
+    cursor.execute('SELECT MAX(rankUpDown) FROM popular_movie_data')  # first largest rankUpDown
+    res1 = cursor.fetchall()
+    maxRank1 = res1[0]
+    cursor.execute('SELECT rankUpDown FROM popular_movie_data ORDER BY rankUpDown DESC LIMIT 1 OFFSET 1')  # 2nd
+    res2 = cursor.fetchall()
+    maxRank2 = res2[0]
+    cursor.execute('SELECT rankUpDown FROM popular_movie_data ORDER BY rankUpDown DESC LIMIT 1 OFFSET 2')  # 3rd
+    res3 = cursor.fetchall()
+    maxRank3 = res3[0]
+    cursor.execute('SELECT MIN(rankUpDown) FROM popular_movie_data')  # largest negative change
+    res4 = cursor.fetchall()
+    minRank = res4[0]
+
+    # getting data from the select movies
+    cursor.execute('SELECT id, title, rank, imdbRating, imdbRatingCount FROM popular_movie_data '
+                   'WHERE rankUpDown = ?', (maxRank1[0],))
+    row1 = cursor.fetchall()
+
+    cursor.execute('SELECT id, title, rank, imdbRating, imdbRatingCount FROM popular_movie_data '
+                   'WHERE rankUpDown = ?', (maxRank2[0],))
+    row2 = cursor.fetchall()
+
+    cursor.execute('SELECT id, title, rank, imdbRating, imdbRatingCount FROM popular_movie_data '
+                   'WHERE rankUpDown = ?', (maxRank3[0],))
+    row3 = cursor.fetchall()
+
+    cursor.execute('SELECT id, title, rank, imdbRating, imdbRatingCount FROM popular_movie_data '
+                   'WHERE rankUpDown = ?', (minRank[0],))
+    row4 = cursor.fetchall()
+
+    # populates rank_updown_data table with data
+    for item in row1:  # largest positive change data
+        cursor.execute("""INSERT INTO rank_updown_data (id, rank, rankUpDown, title,
+                        imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?)""",
+                       (item[0], item[2], maxRank1[0], item[1],
+                        item[3], item[4]))
+
+    for item in row2:  # second largest positive change data
+        cursor.execute("""INSERT INTO rank_updown_data (id, rank, rankUpDown, title,
+                        imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?)""",
+                       (item[0], item[2], maxRank2[0], item[1],
+                        item[3], item[4]))
+
+    for item in row3:  # third largest positive change data
+        cursor.execute("""INSERT INTO rank_updown_data (id, rank, rankUpDown, title,
+                        imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?)""",
+                       (item[0], item[2], maxRank3[0], item[1],
+                        item[3], item[4]))
+
+    for item in row4:  # largest negative change data
+        cursor.execute("""INSERT INTO rank_updown_data (id, rank, rankUpDown, title,
+                        imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?)""",
+                       (item[0], item[2], minRank[0], item[1],
+                        item[3], item[4]))
+    connection.commit()
     return
 
 
@@ -351,14 +406,16 @@ def main():  # main function
     db_setup(cursor)
     db_populate_top250(connection, cursor, datalist)
     db_populate_ratings(connection, cursor,
-                         datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
-                         iddata5)
+                        datalist1, iddata1, datalist2, iddata2, datalist3, iddata3, datalist4, iddata4, datalist5,
+                        iddata5)
     db_close(connection)
     # function calls for sprint 3
     db_setup2(cursor)
     db_populate_popular_tv(connection, cursor, datalist_tv)
     db_populate_top250_movies(connection, cursor, datalist_topmovies)
     db_populate_popular_movies(connection, cursor, datalist_movies)
+    get_rank_updown(connection, cursor)
+    db_close(connection)
 
     return
 
