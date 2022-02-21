@@ -251,12 +251,23 @@ def db_populate_popular_tv(connection: sqlite3.Connection, cursor: sqlite3.Curso
 
 # populates top250_movie_data
 def db_populate_top250_movies(connection: sqlite3.Connection, cursor: sqlite3.Cursor, datalist_topmovies):
-
+    for item in datalist_topmovies:
+        cursor.execute("""INSERT INTO top250_movie_data (id, rank, title, fullTitle,
+        crew, movieYear, imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?,?,?)""",
+                       (item['id'], item['rank'], item['title'], item['fullTitle'],
+                        item['crew'], item['year'], item['imDbRating'], item['imDbRatingCount']))
+        connection.commit()
     return
 
 
-# populates popular movie data
-def db_populate_popular_movies():
+# populates popular_movie_data
+def db_populate_popular_movies(connection: sqlite3.Connection, cursor: sqlite3.Cursor, datalist_movies):
+    for item in datalist_movies:
+        cursor.execute("""INSERT INTO popular_movie_data (id, rank, rankUpDown, title, fullTitle,
+        crew, showYear, imdbRating, imdbRatingCount)VALUES (?,?,?,?,?,?,?,?,?)""",
+                       (item['id'], item['rank'], item['rankUpDown'], item['title'], item['fullTitle'],
+                        item['crew'], item['year'], item['imDbRating'], item['imDbRatingCount']))
+    connection.commit()
     return
 
 
@@ -277,7 +288,7 @@ def main():  # main function
     data = response.json()
     datalist = data['items']  # makes a list of dict
 
-    imdburl_tv = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 most popular tv shows
+    imdburl_tv = f"https://imdb-api.com/en/API/MostPopularTVs/{Secrets.API_KEY}"  # sprint 3 most popular tv shows
     response_tv = requests.get(imdburl_tv)  # gets a response from imDb
     if response_tv.status_code != 200:  # error code
         print("Error!")
@@ -285,7 +296,7 @@ def main():  # main function
     data_tv = response_tv.json()
     datalist_tv = data_tv['items']  # makes a list of dict
 
-    imdburl_topmovies = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 top250 movies
+    imdburl_topmovies = f"https://imdb-api.com/en/API/Top250Movies/{Secrets.API_KEY}"  # sprint 3 top250 movies
     response_topmovies = requests.get(imdburl_topmovies)  # gets a response from imDb
     if response_topmovies.status_code != 200:  # error code
         print("Error!")
@@ -293,7 +304,7 @@ def main():  # main function
     data_topmovies = response_topmovies.json()
     datalist_topmovies = data_topmovies['items']  # makes a list of dict
 
-    imdburl_movies = f"https://imdb-api.com/en/API/Top250TVs/{Secrets.API_KEY}"  # for sprint 3 most popular movies
+    imdburl_movies = f"https://imdb-api.com/en/API/MostPopularMovies/{Secrets.API_KEY}"  # sprint 3 most popular movies
     response_movies = requests.get(imdburl_movies)  # gets a response from imDb
     if response_movies.status_code != 200:  # error code
         print("Error!")
@@ -347,6 +358,7 @@ def main():  # main function
     db_setup2(cursor)
     db_populate_popular_tv(connection, cursor, datalist_tv)
     db_populate_top250_movies(connection, cursor, datalist_topmovies)
+    db_populate_popular_movies(connection, cursor, datalist_movies)
 
     return
 
