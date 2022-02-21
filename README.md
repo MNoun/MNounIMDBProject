@@ -11,22 +11,19 @@ Install Instructions:
   - sqlite
 
 Description:
-  This program uses IMDb API to retrieve data from the top 250 tv shows, and user ratings from the tv shows ranked 1, 50, 100, 200, and The Wheel of Time. This data is exported to text files for easy viewing. This data is also inserted into two sqlite databases. This program includes:
+  This program uses IMDb API to retrieve data from the top 250 tv shows, user ratings from the tv shows ranked 1, 50, 100, 200, and The Wheel of Time, the most popular shows, the most popular movies, and the top 250 movies. This data is exported to text files for easy viewing. This data is also inserted into two sqlite databases. This program includes:
    - main.py: retrieves and formats data, exports and inserts data into text files and an sqlite database
-   - show_data.db: database for show data
+   - show_data.db: database for official show and movie data
    - tests.py: automated tests for functions in main.py, creates and uses a test database
    - test_db.db: test database
    
    Databases:
    - show_data.db
-      - Includes two tables: show_data and ratings_data
-      - Official data from the top 250 shows and user ratings
-      - Ratings_data includes all needed data but should be reformatted to be more clear
+      - Includes six tables: show_data, ratings_data for sprint 2, and popular_movie_data, popular_tv_data, rank_updown_data, top250_movie_data for sprint 3
+      - Each table is the official data from the API
    - test_db.db
-      - Includes two tables: show_data and ratings_data
-      - Show_data only has one entry to use as test data for tests.py
-      - ratings_data is empty
+      - Includes six tables: show_data, ratings_data for sprint 2, and popular_movie_data, popular_tv_data, rank_updown_data, top250_movie_data for sprint 3
+      - Each table is filled with a minumum amount of data during the tests for the tests to work
 
 To Do:
-  - Reformat ratings_data table in show_data.db
   - Fix flake8
