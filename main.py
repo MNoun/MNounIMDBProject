@@ -342,8 +342,7 @@ def gui_setup():
     app = QApplication(sys.argv)
     startWindow = StartWindow.imdbGUIStartWindow()
     startWindow.show()
-    app.exec()
-    return
+    sys.exit(app.exec())
 
 
 # ------------------------------------ Main ------------------------------------------ #
