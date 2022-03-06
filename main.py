@@ -2,13 +2,17 @@
 # Date created: 1/29/22
 # Class: COMP490 Senior Design and Development
 # Assignment: Project 1
+import sys
 import requests
 import Secrets
 import sqlite3
 from typing import Tuple
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 # ------------------------------------ Sprint 1 ------------------------------------------ #
+import StartWindow
+
 
 def get_data(datalist):  # gets raw data from top 250
     with open("RawData.txt", "w") as rawData:  # writes all data to RawData.txt
@@ -328,6 +332,17 @@ def get_rank_updown(connection: sqlite3.Connection, cursor: sqlite3.Cursor):
                        (item[0], item[2], minRank[0], item[1],
                         item[3], item[4]))
     connection.commit()
+    return
+
+
+# ------------------------------------ Sprint 4 ------------------------------------------ #
+
+
+def gui_setup():
+    app = QApplication(sys.argv)
+    startWindow = StartWindow.imdbGUIStartWindow()
+    startWindow.show()
+    app.exec()
     return
 
 
