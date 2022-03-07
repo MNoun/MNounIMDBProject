@@ -48,15 +48,10 @@ class imdbGUIGraphWindow(QMainWindow):
     def graph_setup(self):
         name = 'show_data.db'
         connection, cursor = main.db_open(name)
-        # counttvup = self.count_tvup(connection, cursor)
-        # counttvdown = self.count_tvup(connection, cursor)
-        # countmovieup = self.count_tvup(connection, cursor)
-        # countmoviedown = self.count_tvup(connection, cursor)
-
-        counttvup = 30
-        counttvdown = 70
-        countmovieup = 20
-        countmoviedown = 80
+        counttvup = self.count_tvup(connection, cursor)
+        counttvdown = self.count_tvup(connection, cursor)
+        countmovieup = self.count_tvup(connection, cursor)
+        countmoviedown = self.count_tvup(connection, cursor)
 
         set0 = QBarSet("Rank Up")
         set1 = QBarSet("Rank Down")
@@ -71,18 +66,14 @@ class imdbGUIGraphWindow(QMainWindow):
         chart = QChart()
         chart.addSeries(series)
         chart.setTitle("Popular Ranking Data")
-
         categories = ["TV", "Movies"]
         axis = QBarCategoryAxis()
         axis.append(categories)
         chart.createDefaultAxes()
         chart.setAxisX(axis, series)
-
         chart.legend().setVisible(True)
         chart.legend().setAlignment(Qt.AlignBottom)
-
         chartView = QChartView(chart)
         chartView.setRenderHint(QPainter.Antialiasing)
-
         self.setCentralWidget(chartView)
         return

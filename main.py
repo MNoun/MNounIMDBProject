@@ -430,7 +430,8 @@ def main():  # main function
     db_populate_popular_movies(connection, cursor, datalist_movies)
     get_rank_updown(connection, cursor)
     db_close(connection)
-
+    # function call for sprint 4
+    gui_setup()  # if unique constraint error, comment out other sprints and just run gui_setup()
     return
 
 
