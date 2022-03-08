@@ -1,3 +1,5 @@
+import DataGraphWindow
+import StartWindow
 import main
 import pytest
 import requests
@@ -17,7 +19,7 @@ def test_show_data():
 
 # Sprint 2 test 2: assure that database is created and populated correctly
 def test_database_data():
-    testdict = {"items": [{"id": "test", "title": "test", "fullTitle": "test",
+    testdict = {"items": [{"id": "test1", "title": "test", "fullTitle": "test",
                            "crew": "test", "year": 0, "imDbRating": 0,
                            "imDbRatingCount": 0}]}  # test data for test database
     datalist = testdict['items']
@@ -48,13 +50,13 @@ def test_updown_data():
     testdict1 = {"items": [{"id": "test1", "rank": 0, "rankUpDown": 2, "title": "test", "fullTitle": "test",
                             "crew": "test", "year": 0, "imDbRating": 0, "imDbRatingCount": 0}]}
     datalist1 = testdict1['items']
-    testdict2 = {"items": [{"id": "test2", "rank": 0, "rankUpDown": 8, "title": "test", "fullTitle": "test",
+    testdict2 = {"items": [{"id": "test2", "rank": 0, "rankUpDown": 8, "title": "test2", "fullTitle": "test",
                             "crew": "test", "year": 0, "imDbRating": 0, "imDbRatingCount": 0}]}
     datalist2 = testdict2['items']
-    testdict3 = {"items": [{"id": "test3", "rank": 0, "rankUpDown": -3, "title": "test", "fullTitle": "test",
+    testdict3 = {"items": [{"id": "test3", "rank": 0, "rankUpDown": -3, "title": "test3", "fullTitle": "test",
                             "crew": "test", "year": 0, "imDbRating": 0, "imDbRatingCount": 0}]}
     datalist3 = testdict3['items']
-    testdict4 = {"items": [{"id": "test4", "rank": 0, "rankUpDown": 10, "title": "test", "fullTitle": "test",
+    testdict4 = {"items": [{"id": "test4", "rank": 0, "rankUpDown": 10, "title": "test4", "fullTitle": "test",
                             "crew": "test", "year": 0, "imDbRating": 0, "imDbRatingCount": 0}]}
     datalist4 = testdict4['items']
 
@@ -76,7 +78,7 @@ def test_updown_data():
 
 # Sprint 3 test 3: assures new populate functions work
 def test_database_data2():
-    testdict = {"items": [{"id": "test", "rank": 0, "rankUpDown": 0, "title": "test", "fullTitle": "test",
+    testdict = {"items": [{"id": "test1", "rank": 0, "rankUpDown": 1, "title": "test", "fullTitle": "test",
                            "crew": "test", "year": 0, "imDbRating": 0, "imDbRatingCount": 0}]}
     datalist = testdict['items']
     name = 'test_db.db'
@@ -103,5 +105,34 @@ def test_database_creation():
     assert result[0] == "test2"
 
 
+# Sprint 4 test 1: tests tv up and down counters for graph
+def test_tvupdowncount():
+    name = 'test_db.db'
+    connection, cursor = main.db_open(name)
+    result1 = DataGraphWindow.imdbGUIGraphWindow.count_tvup(DataGraphWindow.imdbGUIGraphWindow, connection, cursor)
+    result2 = DataGraphWindow.imdbGUIGraphWindow.count_tvdown(DataGraphWindow.imdbGUIGraphWindow, connection, cursor)
+    assert result1 == 1
+    assert result2 == 0
+
+
+# Sprint 4 test 2: tests movie up and down counters for graph
+def test_movieupdowncount():
+    name = 'test_db.db'
+    connection, cursor = main.db_open(name)
+    result1 = DataGraphWindow.imdbGUIGraphWindow.count_movieup(DataGraphWindow.imdbGUIGraphWindow, connection, cursor)
+    result2 = DataGraphWindow.imdbGUIGraphWindow.count_moviedown(DataGraphWindow.imdbGUIGraphWindow, connection, cursor)
+    assert result1 == 3
+    assert result2 == 1
+
+
+# Sprint 4 test 3: tests the table crossover
+def test_guicrossover():
+    name = 'test_db.db'
+    connection, cursor = main.db_open(name)
+    cursor.execute('SELECT show_data.title FROM show_data '
+                   'INNER JOIN popular_movie_data ON show_data.id = popular_movie_data.id')
+    res = cursor.fetchall()
+    result = res[0]
+    assert result[0] == "test"
 
 
